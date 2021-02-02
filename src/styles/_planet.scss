@@ -1,0 +1,34 @@
+#planet {
+    position: absolute;
+    width: auto;
+    opacity: 1;
+    transition: 1s;
+    span {
+        left: 50%;
+        top: 50%;        
+        transform: translate(-50%, -50%);
+        max-width: 10rem;
+        transition: 1s;
+    }
+}
+
+.planet {
+    width: 50rem;
+    opacity: 0.5;
+    left: 0%;    
+    transform: rotate(0deg);
+    animation: rotate 150s infinite linear;    
+}
+
+
+
+.moon {
+    position: absolute;
+    width: 5rem;
+    opacity: 0.7;
+    left: 0%;
+    top: 0%;    
+    transform: rotate(0deg);    
+    transform-origin: 250px 250px;
+    animation: rotation_moon 20s infinite linear;
+}

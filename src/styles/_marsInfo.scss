@@ -1,0 +1,190 @@
+.mars__info{
+    font-family: $OpenSans;
+    border-bottom: 1px $white solid;
+    padding-bottom: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: $white;
+    h2{
+        font-family: $Alberta;
+        letter-spacing: 1.5rem;
+        text-transform: uppercase;
+        text-shadow: $textShadow;
+        color: $white;
+        text-align: center;
+        margin-bottom: 2rem;
+        position: relative;
+        font-size:5rem;
+        text-decoration: blanchedalmond;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 9%;
+            width: 80%;
+            height: 100%;
+            border-bottom: 4px solid $nasa-red;
+            border-radius: 30%;
+                
+        }
+    }
+    .weather{
+        margin: 2rem auto;        
+        display: flex;
+        justify-content: flex-end;
+        iframe{
+            max-height: 50rem;
+            width: 50%;
+        }
+        .mars__ticket{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            h3{
+                font-size: 2.5rem;
+                font-family: $Alberta;
+                text-align: center;
+            }
+            input{
+                border: none;
+                border-bottom: rgba($color: #fff, $alpha: .6) solid 3px;
+                background-color: transparent;
+                outline: none;
+                width: 90%;
+                height:8rem;
+                font-size: 2.5rem;
+                font-family: $Alberta;
+                color: white;                
+                padding: 0;
+                &::placeholder{
+                    font-size: 3rem;
+                    font-family: $Alberta;                              
+                    text-indent: 0px;   transition: text-indent 0.3s ease;
+                }
+                &:focus{
+                    border-bottom: rgba($color: #fff, $alpha: 1) solid 3px;
+                }
+            }
+            button{
+                color: $white;
+                background-color: rgba($color: #000000, $alpha: .6);
+                border: white 1px solid;
+                max-width: 90%;
+                margin-top: 3rem;
+                height: 4rem;
+                width: 50%;    
+                font-family: $Alberta;  
+                font-weight: 700;    
+                font-size: 2rem;
+                transition: 0.5s linear;
+                &:hover, :focus{
+                    background-color: $white;            
+                    border: 1px solid #000;
+                    color:  #000;                
+                }     
+            }
+        }
+    }    
+    
+}
+.modal {  
+    opacity: 0;
+    visibility: hidden;    
+    width: 60%;      
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999999;   
+    box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2); 
+    text-align: center;
+    padding: 30px;
+    border-radius: 3px;
+    background-color:#000000;
+    border: 1px $white solid;
+    transition: 0.3s all;
+    .ticket{
+        background-color: $white;
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        margin-bottom: 2rem;
+        font-family: Arial, Helvetica, sans-serif;       
+        .info{
+            border-left: #5f7f96 2px dashed;
+            padding-left: 2rem;
+            p{
+            font-size:1rem;
+            text-align: left;            
+            }
+            .ticket__title{
+                color:#5f7f96;
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 1.3rem;
+            }
+            .name{
+                text-transform: capitalize;
+                color: black;
+                font-size: 2rem;
+                font-weight: 700;
+            }
+            ul{
+                list-style: none;
+                display: flex;
+                padding: 0;                
+                text-transform: uppercase;
+                justify-content: space-between;
+                text-align: left;
+                margin-top: 2rem;
+            }
+        }
+    }
+    button{
+        padding: 3px 1rem;
+        line-height: 4rem;                      
+        font-weight: 700;
+        transition: 0.5s linear;               
+        cursor: crosshair; 
+        background-color: #fff;
+        font-family: $OpenSans;
+        text-transform: uppercase;
+        color: black;
+        outline: none;
+        border: black 1px solid;
+        &:hover {        
+          background-color: transparent;
+          cursor: crosshair;
+          color: $white;  
+          border: white 1px solid; 
+        }   
+    } 
+} 
+.modal__cross {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    fill: #fff;
+    cursor: crosshair;
+    z-index: 9999999999;
+ }
+ .overlay {   
+    opacity: 0;
+    visibility: hidden;    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 20;
+    transition: .3s all;
+}
+.modal.active,
+.overlay.active{
+   opacity: 1;
+   visibility: visible;
+}

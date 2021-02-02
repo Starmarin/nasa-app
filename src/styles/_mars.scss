@@ -1,0 +1,27 @@
+#galaxy {
+    position: absolute;
+    width: auto;
+    transition: 1s;
+    span {
+        position: absolute;
+        left: 50%;
+        top: 0%;        
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+
+.move_right_top {
+    left: 80%;
+    top: 5%;
+}
+
+.galaxy {
+    opacity: 0.8;
+    width: 15rem;    
+}
+
+.rotate-galaxy {
+    animation: rotating-galaxy 100s linear infinite;
+}

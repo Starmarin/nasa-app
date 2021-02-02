@@ -1,0 +1,20 @@
+#ship {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: auto;
+    transition: 1s;
+    width: 20rem;
+    span {
+        top: -25%;
+    }
+}
+
+.ship {
+    width: 70px;
+    filter: hue-rotate(90deg);
+    animation: float 90s infinite linear reverse;
+    z-index: 9994;
+    opacity: 0.5;
+}
+

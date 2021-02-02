@@ -1,0 +1,49 @@
+footer{
+    background-color: #222;
+    padding: 2rem 0.5rem;
+    border-top: 1px white solid;  
+    .container__footer{
+        display: flex;
+        color: white;
+        font-family: $Alberta;
+        font-size: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
+        position: relative;
+        .logo{
+            position: absolute;
+            img{
+                max-width: 5rem;
+            }
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            a{
+                text-decoration: none;
+                color: white;
+                text-transform: uppercase;
+                font-weight: 700;
+                transition: 0.5s linear;               
+                cursor: crosshair; 
+                &:hover {
+                    background-color: #fff;
+                    color: black;
+                    cursor: crosshair;
+                } 
+            } 
+        }
+        .social li{
+            width: 5rem;
+            text-align: center;
+            color: white;
+            &:hover{
+                background-color: #fff;
+                color: black;
+                cursor: crosshair;
+            }
+        }
+    }
+}

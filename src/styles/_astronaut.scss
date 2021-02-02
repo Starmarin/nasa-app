@@ -1,0 +1,25 @@
+#astronaut {
+    position: absolute;
+    left: 70%;
+    top: 30%;
+    width: auto;
+    transition: 1s;
+    span {
+        top: -5%;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+        transform: translate(-50%, 0%);}
+}
+
+.astronaut {
+    -webkit-filter: grayscale(50%) contrast(90%) blur(0);
+    filter: grayscale(50%) contrast(90%) blur(0);
+    opacity: 0.5;
+    width: 20rem;
+    transition: 1s;
+    overflow: hidden;
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}

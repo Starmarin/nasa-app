@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA project</title>
+    <link rel="shortcut icon" href="./assets/img/favicon/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link href="main.css" rel="stylesheet"></head>
+
+<body>
+    <header class="page">
+        <span id="backmenu" class="back"><i class="fas fa-arrow-left"></i>back to the beginning</span>
+        <span id="sound_ico"><i class="fas fa-volume-mute"></i> Click for Sound </span>
+        <div class="container_main">
+            <div id="main_tittle">
+                <h1 class="main_title">NASA</h1>
+                <div id="tag_line">Discover</div>
+                <div id="start_btn" class="button "> &lt;START&gt; </div>
+            </div>
+            <div id="astronaut" class="move_right section">
+                <span id="astronaut_title" class="item">&lt;news&gt;</span>
+                <img id="astronaut_img" class="astronaut rotate" src="./assets/img/astronaut-min.png" alt="astronaut">
+            </div>
+            <div id="planet" class="section">
+                <img class="planet" src="./assets/img/planet-min.png" alt="planet">
+                <span id="planet_title" class="item">&lt;Planets&gt;</span>
+                <img class="moon" src="./assets/img/Luna_Png.png" alt="moon">
+
+            </div>
+            <div id="ship" class="move_right_bottom section">
+                <span id="ship_title" class="item">&lt;ISS&gt;</span>
+                <img class="ship" src="./assets/img/Ship-min.png" alt="ship">
+            </div>
+            <div id="galaxy" class="section move_right_top">
+                <span id="galaxy_title" class="item">&lt;Mars&gt;</span>
+                <img class="galaxy rotate-galaxy" src="./assets/img/Galaxy.png" alt="galaxy">
+            </div>
+
+            <div id="container_desc" class="container-second">
+
+                <div id="title" class="container-title"></div>
+                <div id="info" class="container-body"></div>
+                <div class="container-footer">
+                    <span id="back_to_sub"><i class="fas fa-arrow-left"></i>back</span>
+                </div>
+            </div>
+            <span id="scroll" class="back"><i class="fas fa-arrow-circle-down"></i> scroll down </span>
+            <audio id="bg_music" class="audio" controls loop>
+                <source src="./assets/audio/Most Beautiful Space Background Music.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+
+            <audio id="beep" class="audio" controls>
+                <source src="./assets/audio/Robot_blip-Marianne_Gagnon-120342607.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+
+            <audio id="beep_desc" class="audio" controls>
+                <source src="./assets/audio/Robot_blip_2-Marianne_Gagnon-299056732.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </header>
+    <main class="container_info">
+        <nav>
+            <div class="navigation">
+                <ul class="full-menu">
+                    <li class="menu__item"><a href="#new">&lt;news&gt;</a></li>
+                    <li class="menu__item" id="menu__planets"><a href="#solar-system">&lt;solar system&gt;</a>
+                    </li>
+                </ul>
+                <div class="logo"> <a href="#">
+                        <img src="./assets/img/unnamed.png" alt="logo" class="logo_img"></a>
+                </div>
+                <ul class="full-menu">
+                    <li class="menu__item"><a href="#marsInfo">&lt;MARS&gt;</a></li>
+                    <li class="menu__item"><a href="#iss">&lt;space station&gt;</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu">
+                <div id="nav-trigger" class="nav-trigger open">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <div id="nav" class="out">
+                    <ul>
+                        <li><a href="#">&lt;home&gt;</a></li>
+                        <li><a href="#new">&lt;news&gt;</a></li>
+                        <li><a href="#marsInfo">&lt;MARS&gt;</a></li>
+                        <li><a href="#iss">&lt;space station&gt;</a></li>
+                        <li><a href="#solar-system">&lt;solar system&gt;</a></li>
+                        <li><a href="#footer">&lt;contacts&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="news" id="new">
+            <h2 class="news__title">nasa news</h2>
+            <ul class="news__list">
+
+            </ul>
+            <button class="show">show more</button>
+        </section>
+        <section class="mars__info" id="marsInfo">
+            <h2 class="weather__title">Mars today</h2>
+            <div class="weather">
+                <form class="mars__ticket">
+                    <h3>Next mission date - July 2026 <br>WANNA GET A TICKET?</h3>
+                    <input type="text" placeholder="First Name" class="first-name" required>
+                    <input type="text" placeholder="Last Name" class="last-name" required>
+                    <input type="email" placeholder="Email" class="form__email">
+                    <button class="form__btn btn">GET IT</button>
+                </form>
+                <iframe src="https://mars.nasa.gov/layout/embed/image/insightweather/" width="800" height="530"
+                    scrolling="no" frameborder="0"> </iframe>
+            </div>
+        </section>
+        <div class="modal" data-modal="1">
+            <!--   Svg иконка для закрытия окна  -->
+            <svg class="modal__cross" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                <path
+                    d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+            </svg>
+            <div class="ticket" id="printJS-form">
+                <img src="./assets/img/boarding pass.png" alt="boarding pass">
+                <div class="info">
+                    <p>National Aeronautic and Space Administration</p>
+                    <p class="ticket__title">boarding pass future mars mission</p>
+                    <h3 class="name"></h3>
+                    <ul>
+                        <li>
+                            <p class="ticket__title">launch site</p>
+                            cape canaveral <br> air station <br> florida|earth
+                        </li>
+                        <li>
+                            <p class="ticket__title">arrival site</p>
+                            jasero crater <br> mars
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <p class="ticket__title">sheduled departure</p>
+                            <p>july 2026</p>
+                        </li>
+                        <li>
+                            <p class="ticket__title">award points earned</p>
+                            <p>1.7 billion km</p>
+                        </li>
+                    </ul>
+                </div>
+                <img src="./assets/img/ticket.png" alt="tickets">
+            </div>
+            <button type="button" onclick="printJS({ printable: 'printJS-form', type: 'html'})">
+                Print/Download
+            </button>
+        </div>
+        <div class="overlay" id="overlay-modal"></div>
+        <section class="iss" id="iss">
+            <h2 class="weather__title">International Space Station</h2>
+            <p class="iss__text">The International Space Station (ISS) is a modular space station (habitable artificial
+                satellite) in low Earth orbit. It is a multinational collaborative project involving five participating
+                space agencies: NASA (United States), Roscosmos (Russia), JAXA (Japan), ESA (Europe), and CSA (Canada).
+                <br>Below you can watch position of the ISS in real time.
+            </p>
+            <div id="mapid"></div>
+            <h3 class="people"></h3>
+            <ul class="people__list">
+
+            </ul>
+            <div class="video">
+                <div class="iframe"><iframe width="480" height="270" src="https://ustream.tv/embed/9408562"
+                        scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0"
+                        style="border: 0 none transparent;"></iframe></div>
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/XBPjVzSoepo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe> -->
+                <p>Live video from the International Space Station includes internal views when the crew is on-duty and
+                    Earth views at other times. The video is accompanied by audio of conversations between the crew and
+                    Mission Control. This video is only available when the space station is in contact with the ground.
+                </p>
+
+            </div>
+        </section>
+        <section class="solar" id="solarSystem">
+            <div id="slick-wrapper">
+                <div class="inner">
+                    <div class="txt">
+                        <h3>Mercury</h3>
+                        <p>Mercury is the smallest and innermost planet in the Solar System. Its orbit around the
+                            Sun takes 87.97 days, the shortest of all the planets in the Solar System. It is named
+                            after the Roman deity Mercury, the messenger of the gods.</p>
+                        <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" class="btn btn-primary"
+                            target="_blank">Learn More</a>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="txt">
+                        <h3>Venus</h3>
+                        <p>Venus is the second planet from the Sun. It is named after the Roman goddess of love and
+                            beauty. As the second-brightest natural object in the night sky after the Moon, Venus
+                            can cast shadows and, rarely, is visible to the naked eye in broad daylight.</p>
+                        <a href="https://en.wikipedia.org/wiki/Venus" class="btn btn-primary" target="_blank">Learn
+                            More</a>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="txt">
+                        <h3>Earth</h3>
+                        <p>Earth is the third planet from the Sun and the only astronomical object known to harbor
+                            life. According to radiometric dating and other sources of evidence, Earth formed over
+                            4.5 billion years ago.</p>
+                        <a href="https://en.wikipedia.org/wiki/Earth" class="btn btn-primary" target="_blank">Learn
+                            More</a>
+
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="txt">
+                        <h3>Mars</h3>
+                        <p>Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System
+                            after Mercury. In English, Mars carries a name of the Roman god of war and is often
+                            referred to as the 'Red Planet'.</p>
+                        <a href="https://en.wikipedia.org/wiki/Mars" class="btn btn-primary" target="_blank">Learn
+                            More</a>
+                    </div>
+
+                </div>
+                <div class="inner">
+                    <div class="txt">
+                        <h3>Jupiter</h3>
+                        <p>Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas
+                            giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all
+                            the other planets in the Solar System combined.</p>
+                        <a href="https://en.wikipedia.org/wiki/Jupiter" class="btn btn-primary" target="_blank">Learn
+                            More</a>
+                    </div>
+
+                </div>
+                <div class="inner">
+                    <div class="txt">
+                        <h3>Saturn</h3>
+                        <p>Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after
+                            Jupiter. It is a gas giant with an average radius about nine times that of Earth. It has
+                            only one-eighth the average density of Earth;
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Saturn" class="btn btn-primary" target="_blank">Learn
+                            More</a>
+
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="txt">
+                        <h3>Uranus</h3>
+                        <p>Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and
+                            fourth-largest planetary mass in the Solar System. Uranus is similar in composition to
+                            Neptune.</p>
+                        <a href="https://en.wikipedia.org/wiki/Uranus" class="btn btn-primary" target="_blank">Learn
+                            More</a>
+                    </div>
+
+                </div>
+                <div class="inner">
+                    <div class="txt">
+                        <h3>Neptune</h3>
+                        <p>Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the
+                            Solar System, it is the fourth-largest planet by diameter, the third-most-massive
+                            planet, and the densest giant planet.</p>
+                        <a href="https://en.wikipedia.org/wiki/Neptune" class="btn btn-primary" target="_blank">Learn
+                            More</a>
+                    </div>
+
+                </div>
+                <div class="inner">
+                    <div class="txt">
+                        <h3>Pluto</h3>
+                        <p>Pluto is an icy dwarf planet. Beginning in the 1990s, its status as a
+                            planet was questioned following the discovery of several objects of similar size in the
+                            Kuiper belt. This led the IAU in 2006 to formally define the
+                            term "planet" — excluding Pluto.</p>
+                        <a href="https://en.wikipedia.org/wiki/Pluto" class="btn btn-primary" target="_blank">Learn
+                            More</a>
+                    </div>
+
+                </div>
+            </div>
+            <div id="solar-system">
+                <div id="mercury" class="planets"><img src="./assets/img/planets/1.png" alt="">
+                </div>
+                <div id="venus" class="planets"><img src="./assets/img/planets/2.png" alt=""></div>
+                <div id="earth" class="planets"><img src="./assets/img/planets/3.png" alt=""></div>
+                <div id="mars" class="planets"><img src="./assets/img/planets/4.png" alt=""></div>
+                <div id="jupiter" class="planets"><img src="./assets/img/planets/5.png" alt=""></div>
+                <div id="saturn" class="planets"><img src="./assets/img/planets/6.png" alt=""></div>
+                <div id="uranus" class="planets"><img src="./assets/img/planets/7.png" alt=""></div>
+                <div id="neptune" class="planets"><img src="./assets/img/planets/8.png" alt=""></div>
+                <div id="pluto" class="planets"><img src="./assets/img/planets/9.png" alt=""></div>
+            </div>
+        </section>
+
+    </main>
+    <footer id="footer">
+        <div class="container__footer">
+
+            <ul class="footer-nav">
+                <li><a href="#">&lt;home&gt;</a></li>
+                <li><a href="#new">&lt;news&gt;</a></li>
+                <li><a href="#marsInfo">&lt;MARS&gt;</a></li>
+                <li><a href="#iss">&lt;space station&gt;</a></li>
+                <li><a href="#solar-system">&lt;solar system&gt;</a></li>
+            </ul>
+            <ul class="social">
+                <li class="social__item"> <a href="#" target="_blank" class="nav__link-soc">
+                        <i class="fab fa-facebook-f"></i>
+                    </a></li>
+                <li class="social__item"><a href="#" target="_blank" class="nav__link-soc">
+                        <i class="fab fa-twitter"></i>
+                    </a></li>
+                <li class="social__item"><a href="#" target="_blank" class="nav__link-soc">
+                        <i class="fab fa-instagram"></i>
+                    </a></li>
+            </ul>
+        </div>
+    </footer>
+
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>

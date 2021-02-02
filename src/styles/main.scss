@@ -1,0 +1,225 @@
+@font-face{
+    font-family: Courier;
+    src: url(../assets/fonts/Courier-Std-Bold-Oblique_12109.ttf);
+    font-weight:700
+}
+@import "vars";
+@import "common";
+@import "keyframes";
+@import "items";
+@import "descriptions";
+@import "astronaut";
+@import "planet";
+@import "ship";
+@import "mars";
+@import "info";
+@import "nav";
+@import "marsInfo";
+@import "footer";
+@import "solar";
+@import"iss";
+@import "toggle";
+@import "menu";
+
+
+$slick-font-path: "/node_modules/slick-carousel/slick/fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "/node_modules/slick-carousel/slick-carousel/slick/" !default;
+$slick-arrow-color: black !default;
+@import "~slick-carousel/slick/slick.scss"; 
+@import "~slick-carousel/slick/slick-theme.scss";
+
+
+html, body {  
+    font-family: $OpenSans;
+    font-size: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.page{
+    background: url("../assets/img/bg.jpg") center center;
+    background-size: cover;    
+    /* overflow-x: hidden;  */   
+    position: relative;
+    height: 100vh;
+}
+@media screen and (max-width: 1250px){
+    html{
+       font-size: 8px;
+    }
+    .solar #slick-wrapper{
+      position: absolute;
+      z-index: 987;  
+      width: 60%;
+      left: 45%;} 
+    .modal {
+        width: 80%; 
+    }  
+}
+  
+@media screen and (max-width:1000px){
+    nav{
+        position: fixed;
+       
+    }
+    nav .mobile-menu{
+        display: block;}
+    nav .navigation{
+        display: none;
+    }   
+    .container_info .news{
+        padding-top:1rem ;  
+    } 
+    .modal {
+      max-height: 80vh;
+      .ticket{
+        max-height: 80%;
+        max-width: 90%;
+        margin: 0.5rem auto;
+        img{
+          max-width:20%;
+        }
+      }
+    }  
+    .iss .video{
+      flex-direction: column;
+      align-items: center;
+      .iframe{
+        max-width: 80%;
+      }
+      p{
+        max-width: 80%;
+      }
+    }
+}
+@media screen and (max-width:750px){
+    .solar #slick-wrapper{        
+        min-width: 80%;
+        left: 5%;
+        .inner{   
+            .txt{
+              margin-left: 3rem;
+              margin-top: 10rem;}}
+    } 
+    footer .container__footer{
+        flex-direction: column-reverse;        
+        .footer-nav{
+            flex-wrap: wrap;            
+        }
+    }
+    #backmenu{
+        display: none;
+    }
+    .news__list{            
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        .news__item:nth-child(even){
+            grid-column: 2/3;
+        }    
+        .news__item:nth-child(odd){
+            grid-column: 1/2;
+        }                                
+    } 
+    .mars__info .weather{
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+        iframe{            
+            width: 80%;
+        }
+        .mars__ticket{
+            
+            width: 80%;
+        }
+    }  
+    #scroll{
+        left: 33%;
+    }      
+}
+@media screen and (max-width:500px){
+    html{
+        font-size: 7px;
+    }
+    #sound_ico{
+        display: none;
+    }
+    .news__list{            
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        max-width: 80%;
+        margin: 0 auto;
+        .news__item:nth-child(even){
+            grid-column: 1/2;
+        }    
+        .news__item:nth-child(odd){
+            grid-column: 1/2;
+        }        
+    }
+    .modal {
+        max-height: 50vh;
+        .ticket{ 
+            max-height: 60%; 
+            transform: scaleY(0.6) translateY(-20%);  
+            margin-bottom:-10rem;       
+            img{
+              max-height:100%;
+              max-width: 30%;
+            }
+          }
+    }
+    .news__list{            
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 2fr);
+        max-width: 80%;}
+    .main_title{
+        font-size:8rem
+    }
+    h2{
+        font-size: 4rem !important;
+    }
+    .planet {
+        width: 30rem;}
+        
+    .move_right_top {
+        left: 60%;    
+    }
+    #start_btn{
+        font-size: 3rem;
+    }
+    #astronaut {    
+        left: 50%;
+    } 
+    #scroll{
+        left: 25%;
+    }  
+    .solar {
+        height: 50rem;
+        #solar-system{
+            width: 100%;
+            height: 50rem;
+            bottom: 0;
+            .planets{         
+            img{
+                 max-height: 50rem;        
+           }}
+        }
+    }       
+    
+}
+@media screen and (max-width:350px){
+    html{
+        font-size: 5px;
+    }
+    #slick-wrapper .slick-dots{
+        visibility: hidden;
+    }
+    .people__list:before{
+        display: none;
+    }
+    .iss .people__list{
+        margin-bottom: 2rem;
+    }
+}
+  
+
