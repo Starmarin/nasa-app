@@ -11,6 +11,7 @@ const start = document.querySelector("#start_btn"),
 
 start.addEventListener('click', function () {
     mainMenu();
+    document.body.classList.add('visible');
 });
 backMenu.addEventListener('click', function () {
     goBack();
@@ -51,11 +52,11 @@ function goBack() {
     mainTittle.classList.remove("hide");
     subTittles.forEach(element => {
         element.classList.remove('addTyping');
-
     });
     backMenu.classList.remove("front");
     scrolling.classList.remove("front");
     info.classList.remove('block');
+    document.body.classList.remove('visible');
 }
 
 function openInfo() {

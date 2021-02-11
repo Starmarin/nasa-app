@@ -611,7 +611,7 @@ nav {
     display: flex;
     justify-content: flex-end; }
     .mars__info .weather iframe {
-      max-height: 50rem;
+      /* max-height: 50rem; */
       width: 50%; }
     .mars__info .weather .mars__ticket {
       display: flex;
@@ -953,6 +953,9 @@ footer {
 .block {
   display: block; }
 
+.visible {
+  overflow-y: visible; }
+
 .rotate {
   animation: float 50s infinite linear; }
 
@@ -1292,6 +1295,9 @@ html, body {
   box-sizing: border-box;
   scroll-behavior: smooth; }
 
+body {
+  overflow-y: hidden; }
+
 .page {
   background: url(src/assets/img/bg.jpg) center center;
   background-size: cover;
@@ -1333,7 +1339,8 @@ html, body {
     .iss .video .iframe {
       max-width: 80%; }
     .iss .video p {
-      max-width: 80%; } }
+      max-width: 100%;
+      margin: 0; } }
 
 @media screen and (max-width: 750px) {
   .solar #slick-wrapper {
@@ -1341,7 +1348,7 @@ html, body {
     left: 5%; }
     .solar #slick-wrapper .inner .txt {
       margin-left: 3rem;
-      margin-top: 10rem; }
+      margin-top: 11rem; }
   footer .container__footer {
     flex-direction: column-reverse; }
     footer .container__footer .footer-nav {
@@ -1360,7 +1367,7 @@ html, body {
     align-items: center;
     gap: 2rem; }
     .mars__info .weather iframe {
-      width: 80%; }
+      width: 100%; }
     .mars__info .weather .mars__ticket {
       width: 80%; }
   #scroll {

@@ -37,6 +37,9 @@ html, body {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+body{
+    overflow-y: hidden;
+}
 .page{
     background: url("../assets/img/bg.jpg") center center;
     background-size: cover;    
@@ -89,7 +92,8 @@ html, body {
         max-width: 80%;
       }
       p{
-        max-width: 80%;
+        max-width: 100%;
+        margin: 0;
       }
     }
 }
@@ -100,7 +104,7 @@ html, body {
         .inner{   
             .txt{
               margin-left: 3rem;
-              margin-top: 10rem;}}
+              margin-top: 11rem;}}
     } 
     footer .container__footer{
         flex-direction: column-reverse;        
@@ -126,7 +130,7 @@ html, body {
         align-items: center;
         gap: 2rem;
         iframe{            
-            width: 80%;
+            width: 100%;
         }
         .mars__ticket{
             

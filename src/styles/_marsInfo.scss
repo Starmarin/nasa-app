@@ -4,7 +4,7 @@
     padding-bottom: 5rem;
     max-width: 1200px;
     margin: 0 auto;
-    color: $white;
+    color: $white;    
     h2{
         font-family: $Alberta;
         letter-spacing: 1.5rem;
@@ -31,9 +31,9 @@
     .weather{
         margin: 2rem auto;        
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-end;        
         iframe{
-            max-height: 50rem;
+            /* max-height: 50rem; */
             width: 50%;
         }
         .mars__ticket{

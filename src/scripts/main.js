@@ -12,7 +12,7 @@ music.addEventListener("click", function () {
     beep.play();
     musicFrame.play();
     music.classList.toggle("do_wave");
-    music.style.left = "calc(100% - 20px)";
+    music.style.left = "calc(100% - 15rem)";
 
     if (music.classList.contains("do_wave")) {
         music.innerHTML = '<i class="fas fa-volume-up"></i>';

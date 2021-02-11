@@ -37,16 +37,13 @@ const modalButton = document.querySelector('.form__btn'),
 
 
 modalButton.addEventListener('click', e => {
-    e.preventDefault;
+    e.preventDefault();
     if (firstName.value && lastName.value) {
         names.textContent = `${firstName.value} ${lastName.value}`;
         console.log(names.textContent);
         document.body.classList.add('stop-scrolling');
         modalElem.classList.add('active');
         overlay.classList.add('active');
-        firstName.value = "";
-        lastName.value = "";
-        email.value = "";
     }
 
 });
@@ -54,4 +51,7 @@ closeButton.addEventListener('click', e => {
     modalElem.classList.remove('active');
     overlay.classList.remove('active');
     document.body.classList.remove('stop-scrolling');
+    firstName.value = "";
+    lastName.value = "";
+    email.value = "";
 });

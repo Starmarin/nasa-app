@@ -29125,7 +29125,7 @@ music.addEventListener("click", function () {
     beep.play();
     musicFrame.play();
     music.classList.toggle("do_wave");
-    music.style.left = "calc(100% - 20px)";
+    music.style.left = "calc(100% - 15rem)";
 
     if (music.classList.contains("do_wave")) {
         music.innerHTML = '<i class="fas fa-volume-up"></i>';
@@ -29187,22 +29187,22 @@ const modalButton = document.querySelector('.form__btn'),
       names = document.querySelector('.name');
 
 modalButton.addEventListener('click', e => {
-    e.preventDefault;
+    e.preventDefault();
     if (firstName.value && lastName.value) {
         names.textContent = `${firstName.value} ${lastName.value}`;
         console.log(names.textContent);
         document.body.classList.add('stop-scrolling');
         modalElem.classList.add('active');
         overlay.classList.add('active');
-        firstName.value = "";
-        lastName.value = "";
-        email.value = "";
     }
 });
 closeButton.addEventListener('click', e => {
     modalElem.classList.remove('active');
     overlay.classList.remove('active');
     document.body.classList.remove('stop-scrolling');
+    firstName.value = "";
+    lastName.value = "";
+    email.value = "";
 });
 
 /***/ }),
@@ -29354,6 +29354,7 @@ const start = document.querySelector("#start_btn"),
 
 start.addEventListener('click', function () {
     mainMenu();
+    document.body.classList.add('visible');
 });
 backMenu.addEventListener('click', function () {
     goBack();
@@ -29396,6 +29397,7 @@ function goBack() {
     backMenu.classList.remove("front");
     scrolling.classList.remove("front");
     info.classList.remove('block');
+    document.body.classList.remove('visible');
 }
 
 function openInfo() {

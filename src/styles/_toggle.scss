@@ -5,6 +5,9 @@
 .block{
     display: block;
 }
+.visible{
+    overflow-y: visible;
+}
 .rotate {
     animation: float 50s infinite linear;
 }
